@@ -1,12 +1,16 @@
-import streamlit as st
-import joblib
-import pandas as pd
+import sys
 from pathlib import Path
+
+import streamlit as st
+import pandas as pd
+import joblib
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+sys.path.append(str(ROOT_DIR))
 
 from src.predict import predict_employee
 from src.recommendations import generate_recommendations
 from src.generate_report import generate_employee_report
-
 
 # --------------------------------------------------
 # Page Configuration
